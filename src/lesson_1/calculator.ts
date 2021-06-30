@@ -10,7 +10,7 @@ export const multiplication: OperationType = (x: number, y: number): number =>
 
 export const division: OperationType = (x: number, y: number): number => x / y;
 
-export const calculator: { [key: string]: OperationType } = {
+export const calculator: Record<string, OperationType> = {
   "+": addition,
   "-": subtraction,
   "*": multiplication,
@@ -18,13 +18,13 @@ export const calculator: { [key: string]: OperationType } = {
 };
 
 export enum Priority {
-  first = 1,
-  second = 2,
+  FIRST = 1,
+  SECOND = 2,
 }
 
-export const calculatorPriorities: { [key: string]: number } = {
-  "*": Priority.first,
-  "/": Priority.first,
-  "+": Priority.second,
-  "-": Priority.second,
+export const calculatorPriorities: Record<string, number> = {
+  "*": Priority.FIRST,
+  "/": Priority.FIRST,
+  "+": Priority.SECOND,
+  "-": Priority.SECOND,
 };
